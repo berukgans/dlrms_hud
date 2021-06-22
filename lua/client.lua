@@ -22,19 +22,20 @@ Citizen.CreateThread(function()
         local armor = GetPedArmour(ped)
         local swim = IsPedSwimming(ped)
         local breath = IsPedSwimmingUnderWater(ped)
-        local oxygen = 0.0
 
         local vehicle = GetVehiclePedIsIn(ped, false)
 
         if IsPedInVehicle(ped, vehicle, false) then
             fuel = GetVehicleFuelLevel(vehicle)
+        else
+            if breath then
+                stamina = GetPlayerUnderwaterTimeRemaining(PlayerId()) * 10
+            else
+                stamina = GetPlayerSprintTimeRemaining(PlayerId()) * 10
+            end
         end
 
-        if breath then
-            oxygen = GetPlayerUnderwaterTimeRemaining(PlayerId()) * 10
-        else
-            oxygen = GetPlayerSprintTimeRemaining(PlayerId()) * 10
-        end
+        
 
         SendNUIMessage({
             health = health;
@@ -42,7 +43,7 @@ Citizen.CreateThread(function()
             hunger = hunger;
             thirst = thirst;
 
-            oxygen = oxygen;
+            stamina = stamina;
             swim = swim;
             breath = breath;
 

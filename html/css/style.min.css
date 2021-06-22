@@ -57,7 +57,7 @@
 
 #hunger,
 #thirst,
-#oxygen,
+#stamina,
 #fuel {
   width: 25px;
   justify-content: center;
@@ -92,7 +92,7 @@
   background: rgba(101, 137, 182, 1);
 }
 
-.oxygen {
+.stamina {
   box-shadow: 0px 0px 4px rgba(76, 91, 117, 1);
   background: rgba(76, 91, 117, 1);
 }
