@@ -11,4 +11,4 @@ Fivem için geliştirdiğim status hud.
 * esx_basicneeds
 
 ### Video
-[![Watch the video](https://www.youtube.com/watch?v=fR3TWLS5sdI)](https://www.youtube.com/watch?v=fR3TWLS5sdI)
+https://www.youtube.com/watch?v=fR3TWLS5sdI
