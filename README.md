@@ -9,3 +9,6 @@ Fivem için geliştirdiğim status hud.
 ### Gerekli Scriptler
 * esx_status
 * esx_basicneeds
+
+### Video
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=fR3TWLS5sdI)
