@@ -5,7 +5,7 @@ games { 'gta5' }
 author 'https://github.com/Delarmuss'
 
 client_scripts {
-	'lua/*.lua'
+	'client.lua'
 }
 
 ui_page('html/index.html')
