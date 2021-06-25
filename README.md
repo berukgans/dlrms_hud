@@ -3,7 +3,7 @@ Fivem için geliştirdiğim status hud.
 
 ### Özellikleri
 * Alert Sistemi (Can:50 ve altında ise, Açlık, Susuzluk ve Benzin:25 ve altında ise kırmızı renkte yanıp söner.)
-* Aracın içinde iken Benzin göstergesi gelir ve Stamina göstergesi gider.
+* Aracın içinde iken Stamina göstergesi gider.
 * Stamina ikonu: Suda yüzerken  (Yüzme ikonu), Suyun altında iken (Ciğer ikonu) olarak değişir.
 
 ### Gerekli Scriptler
