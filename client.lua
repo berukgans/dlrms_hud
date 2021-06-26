@@ -15,39 +15,47 @@ end)
 
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(150)
-        local ped = PlayerPedId()
-        local health = GetEntityHealth(ped) - 100
-        local armor = GetPedArmour(ped)
-        local swim = IsPedSwimming(ped)
-        local breath = IsPedSwimmingUnderWater(ped)
+        Citizen.Wait(100)
+        local pauseMenuOn = IsPauseMenuActive()
+        if not pauseMenuOn then 
+            local ped = PlayerPedId()
+            local health = GetEntityHealth(ped) - 100
+            local armor = GetPedArmour(ped)
+            local swim = IsPedSwimming(ped)
+            local breath = IsPedSwimmingUnderWater(ped)
+            local vehicle = GetVehiclePedIsIn(ped, false)
 
-        local vehicle = GetVehiclePedIsIn(ped, false)
-
-        if IsPedInVehicle(ped, vehicle, false) then
-            fuel = GetVehicleFuelLevel(vehicle)
-            DisplayRadar(true)
-        else
-            DisplayRadar(false)
-            if breath then
-                stamina = GetPlayerUnderwaterTimeRemaining(PlayerId()) * 10
+            if IsPedInVehicle(ped, vehicle, false) then
+                fuel = GetVehicleFuelLevel(vehicle)
+                DisplayRadar(true)
             else
-                stamina = GetPlayerSprintTimeRemaining(PlayerId()) * 10
+                DisplayRadar(false)
+                if breath then
+                    stamina = GetPlayerUnderwaterTimeRemaining(PlayerId()) * 10
+                else
+                    stamina = GetPlayerSprintTimeRemaining(PlayerId()) * 10
+                end
             end
+                
+            SendNUIMessage({
+                pauseMenuOn = false,
+                health = health,
+                armor = armor,
+                hunger = hunger,
+                thirst = thirst,
+
+                stamina = stamina,
+                swim = swim,
+                breath = breath,
+
+                vehicle = vehicle
+            })
+        else
+            SendNUIMessage({
+                pauseMenuOn = true,
+            })
         end
+        
 
-        SendNUIMessage({
-            health = health;
-            armor = armor;
-            hunger = hunger;
-            thirst = thirst;
-
-            stamina = stamina;
-            swim = swim;
-            breath = breath;
-
-            vehicle = vehicle;
-            fuel = fuel;
-        })
     end
 end)
