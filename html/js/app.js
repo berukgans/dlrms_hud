@@ -4,6 +4,7 @@ $(function () {
 
     if (data.pauseMenuOn == false) {
       $(".hud-container").css("display", "block");
+      $(".hud-wrapper").animate({ opacity: "1" }, 100);
 
       $(".health").css("width", event.data.health + "%");
       $(".armor").css("width", event.data.armor + "%");
@@ -55,7 +56,9 @@ $(function () {
         $("#stamina").hide("fast");
       }
     } else {
-      $(".hud-container").css("display", "none");
+      $(".hud-wrapper").animate({ opacity: "0" }, 100, () => {
+        $(".hud-container").css("display", "none");
+      });
     }
   });
 });
