@@ -24,6 +24,9 @@ Citizen.CreateThread(function()
             local swim = IsPedSwimming(ped)
             local breath = IsPedSwimmingUnderWater(ped)
             local vehicle = GetVehiclePedIsIn(ped, false)
+            local hungerAlert = Config.HungerAlert
+            local thirstAlert = Config.ThirstAlert
+            local healthAlert = Config.HealthAlert
 
             if IsPedInVehicle(ped, vehicle, false) then
                 fuel = GetVehicleFuelLevel(vehicle)
@@ -40,9 +43,13 @@ Citizen.CreateThread(function()
             SendNUIMessage({
                 pauseMenuOn = false,
                 health = health,
+                healthAlert = healthAlert,
+
                 armor = armor,
                 hunger = hunger,
+                hungerAlert = hungerAlert,
                 thirst = thirst,
+                thirstAlert = thirstAlert,
 
                 stamina = stamina,
                 swim = swim,

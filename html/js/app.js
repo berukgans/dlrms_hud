@@ -12,7 +12,7 @@ $(function () {
       $(".thirst").css("height", event.data.thirst + "%");
       $(".stamina").css("height", event.data.stamina + "%");
 
-      if (data.health <= 50) {
+      if (data.health <= data.healthAlert) {
         $(".health-alert").css("display", "block");
         $(".health-alert").addClass("blink-anim");
         $(".health").css("box-shadow", "0 0 0 rgba(0,0,0,1)");
@@ -21,7 +21,7 @@ $(function () {
         $(".health-alert").removeClass("blink-anim");
         $(".health").css("box-shadow", "0px 0px 4px rgba(65, 155, 53, 1)");
       }
-      if (data.hunger <= 25) {
+      if (data.hunger <= data.hungerAlert) {
         $(".hunger-alert").css("display", "block");
         $(".hunger-alert").addClass("blink-anim");
         $(".hunger").css("box-shadow", "0 0 0 rgba(0,0,0,1)");
@@ -30,7 +30,7 @@ $(function () {
         $(".hunger-alert").removeClass("blink-anim");
         $(".hunger").css("box-shadow", "0px 0px 4px rgba(210, 155, 67, 1)");
       }
-      if (data.thirst <= 25) {
+      if (data.thirst <= data.thirstAlert) {
         $(".thirst-alert").css("display", "block");
         $(".thirst-alert").addClass("blink-anim");
         $(".thirst").css("box-shadow", "0 0 0 rgba(0,0,0,1)");
