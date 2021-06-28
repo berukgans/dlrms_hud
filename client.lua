@@ -23,6 +23,7 @@ Citizen.CreateThread(function()
             local armor = GetPedArmour(ped)
             local swim = IsPedSwimming(ped)
             local breath = IsPedSwimmingUnderWater(ped)
+            local underWater = IsEntityInWater(ped)
             local vehicle = GetVehiclePedIsIn(ped, false)
             local hungerAlert = Config.HungerAlert
             local thirstAlert = Config.ThirstAlert
@@ -54,6 +55,7 @@ Citizen.CreateThread(function()
                 stamina = stamina,
                 swim = swim,
                 breath = breath,
+                underWater = underWater,
 
                 vehicle = vehicle
             })
