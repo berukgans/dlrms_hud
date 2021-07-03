@@ -4,7 +4,6 @@ $(() => {
 
     if (!item.pauseMenuOn) {
       $(".hud-container").css("display", "block");
-      $(".hud-wrapper").animate({ opacity: "1" }, 100);
 
       $(".health").css("width", item.health + "%");
       $(".armor").css("width", item.armor + "%");
@@ -54,9 +53,7 @@ $(() => {
         }
       }
     } else {
-      $(".hud-wrapper").animate({ opacity: "0" }, 100, () => {
-        $(".hud-container").css("display", "none");
-      });
+      $(".hud-container").css("display", "none");
     }
   });
 });
