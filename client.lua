@@ -16,7 +16,7 @@ end)
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(100)
-        local pauseMenuOn = IsPauseMenuActive()
+        pauseMenuOn = IsPauseMenuActive()
         if not pauseMenuOn then 
             local ped = PlayerPedId()
             local health = GetEntityHealth(ped) - 100
@@ -30,7 +30,6 @@ Citizen.CreateThread(function()
             local healthAlert = Config.HealthAlert
 
             if IsPedInVehicle(ped, vehicle, false) then
-                fuel = GetVehicleFuelLevel(vehicle)
                 DisplayRadar(true)
             else
                 DisplayRadar(false)
