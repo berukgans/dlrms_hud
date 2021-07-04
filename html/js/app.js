@@ -44,12 +44,14 @@ $(() => {
       } else {
         $("#stamina").show("fast");
 
+        if (item.stamina) {
+          $(".stamina-icon").attr("src", "img/stamina.svg");
+        }
         if (item.swim) {
           $(".stamina-icon").attr("src", "img/swim.svg");
-        } else if (item.breath) {
+        }
+        if (item.breath) {
           $(".stamina-icon").attr("src", "img/breath.svg");
-        } else {
-          $(".stamina-icon").attr("src", "img/stamina.svg");
         }
       }
     } else {
