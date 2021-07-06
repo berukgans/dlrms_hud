@@ -12,26 +12,26 @@ $(() => {
       $(".stamina").css("height", item.stamina + "%");
 
       if (item.health <= item.healthAlert) {
-        $(".health-alert").css("display", "block");
         $(".health-alert").addClass("blink-anim");
+        $(".health-alert").css("display", "block");
         $(".health").css("box-shadow", "0 0 0 rgba(0,0,0,1)");
       } else {
-        $(".health-alert").css("display", "none");
         $(".health-alert").removeClass("blink-anim");
+        $(".health-alert").css("display", "none");
         $(".health").css("box-shadow", "0px 0px 4px rgba(65, 155, 53, 1)");
       }
       if (item.hunger <= item.hungerAlert) {
-        $(".hunger-alert").css("display", "block");
         $(".hunger-alert").addClass("blink-anim");
+        $(".hunger-alert").css("display", "block");
         $(".hunger").css("box-shadow", "0 0 0 rgba(0,0,0,1)");
       } else {
-        $(".hunger-alert").css("display", "none");
         $(".hunger-alert").removeClass("blink-anim");
+        $(".hunger-alert").css("display", "none");
         $(".hunger").css("box-shadow", "0px 0px 4px rgba(210, 155, 67, 1)");
       }
       if (item.thirst <= item.thirstAlert) {
-        $(".thirst-alert").css("display", "block");
         $(".thirst-alert").addClass("blink-anim");
+        $(".thirst-alert").css("display", "block");
         $(".thirst").css("box-shadow", "0 0 0 rgba(0,0,0,1)");
       } else {
         $(".thirst-alert").removeClass("blink-anim");

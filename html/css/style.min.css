@@ -74,27 +74,22 @@
 }
 
 .health {
-  box-shadow: 0px 0px 4px rgba(65, 155, 53, 1);
   background: rgba(65, 155, 53, 1);
 }
 
 .armor {
-  box-shadow: 0px 0px 4px rgba(53, 111, 204, 1);
   background: rgba(53, 111, 204, 1);
 }
 
 .hunger {
-  box-shadow: 0px 0px 4px rgba(210, 155, 67, 1);
   background: rgba(210, 155, 67, 1);
 }
 
 .thirst {
-  box-shadow: 0px 0px 4px rgba(101, 137, 182, 1);
   background: rgba(101, 137, 182, 1);
 }
 
 .stamina {
-  box-shadow: 0px 0px 4px rgba(76, 91, 117, 1);
   background: rgba(76, 91, 117, 1);
 }
 
