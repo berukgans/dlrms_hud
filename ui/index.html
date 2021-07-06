@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css" />
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Title -->
+    <title>Delarmuss HUD:https://github.com/Delarmuss</title>
+  </head>
+
+  <body>
+    <div class="hud-container" style="display: none">
+      <div class="hud-wrapper">
+        <div class="hud-bar" id="health">
+          <img class="hud-icon" src="img/health.svg" />
+          <div class="hud-value health">
+            <div class="hud-alert health-alert"></div>
+          </div>
+        </div>
+        <div class="hud-bar" id="armor">
+          <img class="hud-icon" src="img/armor.svg" />
+          <div class="hud-value armor"></div>
+        </div>
+        <div class="hud-bar" id="hunger">
+          <img class="hud-icon" src="img/hunger.svg" />
+          <div class="hud-value hunger">
+            <div class="hud-alert hunger-alert"></div>
+          </div>
+        </div>
+        <div class="hud-bar" id="thirst">
+          <img class="hud-icon" src="img/thirst.svg" />
+          <div class="hud-value thirst">
+            <div class="hud-alert thirst-alert"></div>
+          </div>
+        </div>
+        <div class="hud-bar" id="stamina">
+          <img class="hud-icon stamina-icon" src="img/stamina.svg" />
+          <div class="hud-value stamina"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

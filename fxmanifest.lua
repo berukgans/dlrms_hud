@@ -9,11 +9,11 @@ client_scripts {
 	'config.lua'
 }
 
-ui_page('html/index.html')
+ui_page('ui/index.html')
 
 files({
-	"html/*.html",
-	"html/css/*.css",
-	"html/img/*.svg",
-	"html/js/*.js"
+	"ui/*.html",
+	"ui/css/*.css",
+	"ui/img/*.svg",
+	"ui/js/*.js"
 })
