@@ -13,7 +13,7 @@ $(() => {
 
       if (item.health <= item.healthAlert) {
         $(".health-alert").addClass("blink-anim");
-        $(".health-alert").css("display", "block");
+        $(".health-alert").css({ display: "block" });
         $(".health").css("box-shadow", "0 0 0 rgba(0,0,0,1)");
       } else {
         $(".health-alert").removeClass("blink-anim");
