@@ -7,8 +7,8 @@ Fivem için geliştirdiğim status hud.
 * Stamina ikonu: Suda yüzerken  (Yüzme ikonu), Suyun altında iken (Ciğer ikonu) olarak değişir.
 
 ### Gerekli Scriptler
-* esx_status
-* esx_basicneeds
+- [esx_status](https://github.com/delarmuss/esx_status)
+- [esx_status](https://github.com/delarmuss/esx_basicneeds)
 
 ### Video
 https://www.youtube.com/watch?v=fR3TWLS5sdI
