@@ -8,7 +8,7 @@ Fivem için geliştirdiğim status hud.
 
 ### Gerekli Scriptler
 - [esx_status](https://github.com/delarmuss/esx_status)
-- [esx_status](https://github.com/delarmuss/esx_basicneeds)
+- [esx_basicneeds](https://github.com/delarmuss/esx_basicneeds)
 
 ### Video
 https://www.youtube.com/watch?v=fR3TWLS5sdI
