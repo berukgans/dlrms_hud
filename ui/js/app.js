@@ -20,6 +20,15 @@ $(() => {
         $(".health-alert").css("display", "none");
         $(".health").css("box-shadow", "0px 0px 4px rgba(65, 155, 53, 1)");
       }
+      if (item.armor <= item.armorAlert && item.armor != 0) {
+        $(".armor-alert").addClass("blink-anim");
+        $(".armor-alert").css("display", "block");
+        $(".armor").css("box-shadow", "0 0 0 rgba(0,0,0,1)");
+      } else {
+        $(".armor-alert").removeClass("blink-anim");
+        $(".armor-alert").css("display", "none");
+        $(".armor").css("box-shadow", "0px 0px 4px rgba(67, 109, 175, 1)");
+      }
       if (item.hunger <= item.hungerAlert) {
         $(".hunger-alert").addClass("blink-anim");
         $(".hunger-alert").css("display", "block");
