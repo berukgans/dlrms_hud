@@ -12,4 +12,4 @@ Fivem için geliştirdiğim status hud.
 - [esx_basicneeds](https://github.com/delarmuss/esx_basicneeds)
 
 ### Video
-eklenecek..
+https://youtu.be/BV8fXSyola8
