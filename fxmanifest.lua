@@ -1,19 +1,19 @@
 fx_version 'adamant'
-
-games { 'gta5' }
-
+game 'gta5'
+version '1.1'
 author 'https://github.com/Delarmuss'
+description 'Status hud by delarmuss'
 
 client_scripts {
 	'client.lua',
 	'config.lua'
 }
 
-ui_page('ui/index.html')
+ui_page'ui/ui.html'
 
-files({
+files{
 	"ui/*.html",
 	"ui/css/*.css",
 	"ui/img/*.svg",
 	"ui/js/*.js"
-})
+}
