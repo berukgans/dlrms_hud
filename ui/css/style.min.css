@@ -5,7 +5,25 @@
   outline: 0;
   box-sizing: border-box;
 }
+:root {
+  --color-alert: rgba(184, 20, 20, 0.8);
+  --boxshadow-alert: 0px 0px 4px rgba(184, 20, 20, 0.8);
 
+  --color-health: rgba(65, 155, 53, 1);
+  --boxshadow-health: 0px 0px 4px rgba(65, 155, 53, 1);
+
+  --color-armor: rgba(67, 109, 175, 1);
+  --boxshadow-armor: 0px 0px 4px rgba(67, 109, 175, 1);
+
+  --color-hunger: rgba(210, 155, 67, 1);
+  --boxshadow-hunger: 0px 0px 4px rgba(210, 155, 67, 1);
+
+  --color-thirst: rgba(101, 137, 182, 1);
+  --boxshadow-thirst: 0px 0px 4px rgba(101, 137, 182, 1);
+
+  --color-stamina: rgba(76, 91, 117, 1);
+  --boxshadow-stamina: 0px 0px 4px rgba(76, 91, 117, 1);
+}
 .hud-container {
   width: 100%;
   height: 100vh;
@@ -83,40 +101,40 @@
 .hud-alert {
   width: 100%;
   height: 100%;
-  border-radius: inherit;
-  box-shadow: 0px 0px 4px rgba(184, 20, 20, 0.8);
-  background: rgba(184, 20, 20, 0.8);
   display: none;
-  z-index: 1;
+  border-radius: inherit;
+  background: var(--color-alert);
+  box-shadow: var(--boxshadow-alert);
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 1;
 }
 
 .health {
-  background: rgba(65, 155, 53, 1);
-  box-shadow: 0px 0px 4px rgba(65, 155, 53, 1);
+  background: var(--color-health);
+  box-shadow: var(--boxshadow-health);
 }
 .armor {
-  background: rgba(67, 109, 175, 1);
-  box-shadow: 0px 0px 4px rgba(67, 109, 175, 1);
+  background: var(--color-armor);
+  box-shadow: var(--boxshadow-armor);
 }
 
 .hunger,
 .hunger-top {
-  background: rgba(210, 155, 67, 1);
-  box-shadow: 0px 0px 4px rgba(210, 155, 67, 1);
+  background: var(--color-hunger);
+  box-shadow: var(--boxshadow-hunger);
 }
 
 .thirst,
 .thirst-top {
-  background: rgba(101, 137, 182, 1);
-  box-shadow: 0px 0px 4px rgba(101, 137, 182, 1);
+  background: var(--color-thirst);
+  box-shadow: var(--boxshadow-thirst);
 }
 
 .stamina {
-  background: rgba(76, 91, 117, 1);
-  box-shadow: 0px 0px 4px rgba(76, 91, 117, 1);
+  background: var(--color-stamina);
+  box-shadow: var(--boxshadow-stamina);
 }
 
 .blink-anim {
