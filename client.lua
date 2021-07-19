@@ -28,7 +28,7 @@ Citizen.CreateThread(function()
             local thirstAlert = Config.ThirstAlert
             local healthAlert = Config.HealthAlert
             local armorAlert = Config.ArmorAlert
-
+            
             if IsPedInVehicle(ped, vehicle, false) then
                 DisplayRadar(true)
             else

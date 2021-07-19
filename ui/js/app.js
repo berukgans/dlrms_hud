@@ -39,8 +39,8 @@ $(() => {
       } else {
         $(".hunger-alert").removeClass("blink-anim");
         $(".hunger-alert").css("display", "none");
-        $(".hunger").css("box-shadow", "0px 0px 4px rgba(210, 155, 67, 1)");
-        $(".hunger-top").css("box-shadow", "0px 0px 4px rgba(210, 155, 67, 1)");
+        $(".hunger").css("box-shadow", "0px 0px 4px rgba(255, 193, 0, 1)");
+        $(".hunger-top").css("box-shadow", "0px 0px 4px rgba(255, 193, 0, 1)");
       }
       if (data.thirst <= data.thirstAlert) {
         $(".thirst-alert").addClass("blink-anim");
