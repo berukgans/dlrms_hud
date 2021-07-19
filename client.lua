@@ -1,5 +1,6 @@
 
 ESX = nil
+
 Citizen.CreateThread(function()
     while ESX == nil do
         TriggerEvent('esx:getSharedObject', function(obj)
@@ -8,6 +9,7 @@ Citizen.CreateThread(function()
         Citizen.Wait(0)
     end
 end)
+
 RegisterNetEvent("esx_status:onTick") 
 AddEventHandler("esx_status:onTick", function(Status)
     hunger, thirst = Status[1].percent, Status[2].percent
