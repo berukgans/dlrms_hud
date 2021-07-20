@@ -11,8 +11,8 @@
   src: url(../font/SamsungOne-400.ttf);
 }
 :root {
-  --hud-menu-color: rgba(39, 46, 72, 0.9);
-  --hud-menu-header-color: rgba(26, 35, 58, 0.5);
+  --hud-menu-color: rgba(39, 46, 72, 1);
+  --hud-menu-header-color: rgba(26, 35, 58, 1);
 
   --color-alert: rgba(184, 20, 20, 0.8);
   --boxshadow-alert: 0px 0px 4px rgba(184, 20, 20, 0.8);
@@ -41,6 +41,7 @@
 .hud-menu {
   width: 300px;
   background: var(--hud-menu-color);
+  box-shadow: 0 0 3px var(--hud-menu-color);
   position: absolute;
   left: 50%;
   top: 50%;
