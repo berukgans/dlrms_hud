@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <!-- Title -->
+    <title>Delarmuss HUD v1.2:https://github.com/Delarmuss</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="hud-container">
+      <div class="hud-menu">
+        <!-- <input type="button" value="X" id="close" /> -->
+        <button id="close">
+          <img src="img/uncheck.svg" class="uncheck-icon" />
+        </button>
+        <div class="hud-menu-header">hud menu</div>
+        <div class="hud-menu-main">
+          <table>
+            <tr>
+              <td class="hud-menu-info">health</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label">
+                  <input type="checkbox" checked name="healthbar" id="hpchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" />
+                  </div>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">armor</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label"
+                  ><input type="checkbox" checked name="healthbar" id="armorchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" /></div
+                ></label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">hunger</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label"
+                  ><input type="checkbox" checked name="healthbar" id="hungerchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" /></div
+                ></label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">thirst</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label"
+                  ><input type="checkbox" checked name="healthbar" id="thirstchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" /></div
+                ></label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">hunger in car</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label"
+                  ><input type="checkbox" checked name="healthbar" id="hungerinchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" /></div
+                ></label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">thirst in car</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label"
+                  ><input type="checkbox" checked name="healthbar" id="thirstinchk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" /></div
+                ></label>
+              </td>
+            </tr>
+            <tr>
+              <td class="hud-menu-info">stamina</td>
+              <td class="hud-menu-dot">:</td>
+              <td class="hud-menu-check">
+                <label class="check-label"
+                  ><input type="checkbox" checked name="healthbar" id="staminachk" />
+                  <div class="check-button">
+                    <img src="img/check.svg" class="check-icon" />
+                    <img src="img/uncheck.svg" class="uncheck-icon" /></div
+                ></label>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="hud-wrapper">
+        <div id="hud-top">
+          <div class="hunger-top-bg" id="hunger-top">
+            <div class="hunger-top"></div>
+            <div class="hud-alert hunger-alert"></div>
+          </div>
+          <div class="thirst-top-bg" id="thirst-top">
+            <div class="thirst-top"></div>
+            <div class="hud-alert thirst-alert"></div>
+          </div>
+        </div>
+        <div id="hud-bottom">
+          <div class="hud-bar" id="health">
+            <img class="hud-icon" src="img/health.svg" />
+            <div class="hud-value health"></div>
+            <div class="hud-alert health-alert"></div>
+          </div>
+          <div class="hud-bar" id="armor">
+            <img class="hud-icon" src="img/armor.svg" />
+            <div class="hud-value armor"></div>
+            <div class="hud-alert armor-alert"></div>
+          </div>
+          <div id="hts">
+            <div class="hud-bar" id="hunger">
+              <img class="hud-icon" src="img/hunger.svg" />
+              <div class="hud-value hunger"></div>
+              <div class="hud-alert hunger-alert"></div>
+            </div>
+            <div class="hud-bar" id="thirst">
+              <img class="hud-icon" src="img/thirst.svg" />
+              <div class="hud-value thirst"></div>
+              <div class="hud-alert thirst-alert"></div>
+            </div>
+            <div class="hud-bar" id="stamina">
+              <img class="hud-icon stamina-icon" src="img/stamina.svg" />
+              <div class="hud-value stamina"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Javascript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
