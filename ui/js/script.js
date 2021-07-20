@@ -25,8 +25,6 @@ $(() => {
               $.post("http://dlrms_hud/dlrms_hud:close", JSON.stringify({}));
             }
           });
-          const hunger = $("#hungerinchk");
-          const thirst = $("#thirstinchk");
 
           $("#hpchk").on("change", function () {
             this.checked ? $("#health").show("fast") : $("#health").hide("fast");
