@@ -1,6 +1,6 @@
-
 ESX = nil
-
+local ui = false
+local hud = false
 Citizen.CreateThread(function()
     while ESX == nil do
         TriggerEvent('esx:getSharedObject', function(obj)
@@ -9,10 +9,31 @@ Citizen.CreateThread(function()
         Citizen.Wait(0)
     end
 end)
-
 RegisterNetEvent("esx_status:onTick") 
 AddEventHandler("esx_status:onTick", function(Status)
     hunger, thirst = Status[1].percent, Status[2].percent
+end)
+
+RegisterCommand('hud', function()
+    ui = not ui
+    if ui then 
+        displayUI(true)
+    else
+        displayUI(false)
+    end
+end)
+
+function displayUI(bool)
+    ui = bool
+    SetNuiFocus(bool, bool)
+    SendNUIMessage({
+        action = 'ui',
+        ui = bool
+    })
+end
+
+RegisterNUICallback('dlrms_hud:close', function()
+    displayUI(false)
 end)
 
 Citizen.CreateThread(function()
@@ -43,6 +64,7 @@ Citizen.CreateThread(function()
             end
                 
             SendNUIMessage({
+                action = 'hud',
                 pauseMenuOn = false,
                 health = health,
                 healthAlert = healthAlert,
