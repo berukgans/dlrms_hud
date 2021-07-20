@@ -129,6 +129,14 @@ input[type="checkbox"]:checked + .check-button {
   background: #0367b9;
   box-shadow: 0 0 2px #0367b9;
 }
+input[type="checkbox"]:checked + .check-button .check-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+input[type="checkbox"]:checked + .check-button .uncheck-icon {
+  opacity: 0;
+  transform: translateX(10px);
+}
 .check-button {
   width: 100%;
   height: 100%;
@@ -136,29 +144,6 @@ input[type="checkbox"]:checked + .check-button {
   box-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
   position: relative;
   transition: background 0.3s, box-shadow 0.3s;
-}
-.check-button img {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-}
-.check-icon {
-  opacity: 0;
-  right: 2px;
-  top: 2px;
-  transition: opacity 0.3s;
-}
-.uncheck-icon {
-  opacity: 1;
-  left: 2px;
-  top: 2px;
-  transition: opacity 0.3s;
-}
-input[type="checkbox"]:checked + .check-button .check-icon {
-  opacity: 1;
-}
-input[type="checkbox"]:checked + .check-button .uncheck-icon {
-  opacity: 0;
 }
 .check-button::before {
   content: "";
@@ -171,6 +156,26 @@ input[type="checkbox"]:checked + .check-button .uncheck-icon {
   box-shadow: 0 0 2px #fff;
   transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
 }
+.check-button img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+.check-icon {
+  opacity: 0;
+  right: 2px;
+  top: 2px;
+  transform: translateX(-10px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.uncheck-icon {
+  opacity: 1;
+  left: 2px;
+  top: 2px;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateX(0);
+}
+
 .hud-menu-check input {
   width: 25px;
   height: 25px;
