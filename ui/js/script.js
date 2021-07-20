@@ -29,25 +29,25 @@ $(() => {
           const thirst = $("#thirstinchk");
 
           $("#hpchk").on("change", function () {
-            this.checked ? $("#health").hide("fast") : $("#health").show("fast");
+            this.checked ? $("#health").show("fast") : $("#health").hide("fast");
           });
           $("#armorchk").on("change", function () {
-            this.checked ? $("#armor").hide("fast") : $("#armor").show("fast");
+            this.checked ? $("#armor").show("fast") : $("#armor").hide("fast");
           });
           $("#hungerchk").on("change", function () {
-            this.checked ? $("#hunger").hide("fast") : $("#hunger").show("fast");
+            this.checked ? $("#hunger").show("fast") : $("#hunger").hide("fast");
           });
           $("#thirstchk").on("change", function () {
-            this.checked ? $("#thirst").hide("fast") : $("#thirst").show("fast");
+            this.checked ? $("#thirst").show("fast") : $("#thirst").hide("fast");
           });
           $("#hungerinchk").on("change", function () {
-            this.checked ? $("#hunger-top").hide("fast") : $("#hunger-top").show("fast");
+            this.checked ? $("#hunger-top").show("fast") : $("#hunger-top").hide("fast");
           });
           $("#thirstinchk").on("change", function () {
-            this.checked ? $("#thirst-top").hide("fast") : $("#thirst-top").show("fast");
+            this.checked ? $("#thirst-top").show("fast") : $("#thirst-top").hide("fast");
           });
           $("#staminachk").on("change", function () {
-            this.checked ? $("#stamina").hide("fast") : $("#stamina").show("fast");
+            this.checked ? $("#stamina").show("fast") : $("#stamina").hide("fast");
           });
         } else {
           $(".hud-menu").hide();
