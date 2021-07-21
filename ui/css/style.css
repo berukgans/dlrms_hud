@@ -121,6 +121,16 @@
   left: 0;
   top: 0;
 }
+.speedtype-label {
+  width: 50%;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+.speedtype-label input[type="radio"] {
+  margin-right: 3px;
+}
 .check-label {
   width: 50px;
   height: 25px;
