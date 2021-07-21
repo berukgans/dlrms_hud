@@ -1,12 +1,11 @@
 ESX = nil
 local ui = false
-local hud = false
 Citizen.CreateThread(function()
     while ESX == nil do
+        Citizen.Wait(1)
         TriggerEvent('esx:getSharedObject', function(obj)
             ESX = obj
         end)
-        Citizen.Wait(0)
     end
 end)
 RegisterNetEvent("esx_status:onTick") 
@@ -38,10 +37,10 @@ end)
 
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(100)
-        pauseMenuOn = IsPauseMenuActive()
+        Citizen.Wait(200)
+        local pauseMenuOn = IsPauseMenuActive()
         if not pauseMenuOn then 
-            local ped = PlayerPedId()
+            local ped = GetPlayerPed(-1)
             local health = GetEntityHealth(ped) - 100
             local armor = GetPedArmour(ped)
             local swim = IsPedSwimming(ped)
