@@ -39,10 +39,11 @@ end)
 
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(200)
+        local sleep = 100
         local pauseMenuOn = IsPauseMenuActive()
+        
         if not pauseMenuOn then 
-            local ped = GetPlayerPed(-1)
+            local ped = PlayerPedId()
             local health = GetEntityHealth(ped) - 100
             local armor = GetPedArmour(ped)
             local swim = IsPedSwimming(ped)
@@ -84,9 +85,11 @@ Citizen.CreateThread(function()
                 vehicle = vehicle
             })
         else
+            sleep = 500
             SendNUIMessage({
                 pauseMenuOn = true
             })
         end
+        Citizen.Wait(sleep)
     end
 end)
