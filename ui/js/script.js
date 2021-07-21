@@ -1,6 +1,6 @@
 $(() => {
-  window.addEventListener("message", (event) => {
-    const data = event.data;
+  window.addEventListener("message", (e) => {
+    const data = e.data;
     if (!data.pauseMenuOn) {
       $(".hud-container").show();
 
@@ -14,7 +14,7 @@ $(() => {
 
       if (data.action === "ui") {
         if (data.ui) {
-          $(".hud-menu").show();
+          $(".hud-menu").fadeIn("fast");
 
           $("#close").on("click", function () {
             $.post("http://dlrms_hud/dlrms_hud:close", JSON.stringify({}));
@@ -48,7 +48,7 @@ $(() => {
             this.checked ? $("#stamina").show("fast") : $("#stamina").hide("fast");
           });
         } else {
-          $(".hud-menu").hide();
+          $(".hud-menu").fadeOut("fast");
         }
       } else if (data.action === "hud") {
         if (data.health <= data.healthAlert) {
