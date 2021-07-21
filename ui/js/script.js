@@ -60,7 +60,7 @@ $(() => {
           $(".health-alert").css("display", "none");
           $(".health").css("box-shadow", "0px 0px 4px rgba(65, 155, 53, 1)");
         }
-        if (data.armor <= data.armorAlert && data.armor != 0) {
+        if (data.armor <= data.armorAlert && !data.armor == 0) {
           $(".armor-alert").addClass("blink-anim");
           $(".armor-alert").css("display", "block");
           $(".armor").css("box-shadow", "0 0 0 rgba(0,0,0,1)");

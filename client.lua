@@ -1,5 +1,6 @@
 ESX = nil
 local ui = false
+
 Citizen.CreateThread(function()
     while ESX == nil do
         Citizen.Wait(1)
@@ -8,9 +9,10 @@ Citizen.CreateThread(function()
         end)
     end
 end)
+
 RegisterNetEvent("esx_status:onTick") 
-AddEventHandler("esx_status:onTick", function(Status)
-    hunger, thirst = Status[1].percent, Status[2].percent
+AddEventHandler("esx_status:onTick", function(status)
+    hunger, thirst = status[1].percent, status[2].percent
 end)
 
 RegisterCommand('hud', function()
@@ -50,7 +52,7 @@ Citizen.CreateThread(function()
             local thirstAlert = Config.ThirstAlert
             local healthAlert = Config.HealthAlert
             local armorAlert = Config.ArmorAlert
-            
+
             if IsPedInVehicle(ped, vehicle, false) then
                 DisplayRadar(true)
             else
@@ -83,10 +85,8 @@ Citizen.CreateThread(function()
             })
         else
             SendNUIMessage({
-                pauseMenuOn = true,
+                pauseMenuOn = true
             })
         end
-        
-
     end
 end)
