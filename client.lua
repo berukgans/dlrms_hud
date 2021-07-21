@@ -15,26 +15,27 @@ AddEventHandler("esx_status:onTick", function(status)
     hunger, thirst = status[1].percent, status[2].percent
 end)
 
-RegisterCommand('hud', function()
-    ui = not ui
-    if ui then 
-        displayUI(true)
-    else
-        displayUI(false)
-    end
-end)
-
-function displayUI(bool)
-    ui = bool
+RegisterNetEvent('dlrms_hud:ui')
+AddEventHandler('dlrms_hud:ui', function(bool)
+    ui = bool   
     SetNuiFocus(bool, bool)
     SendNUIMessage({
         action = 'ui',
         ui = bool
     })
-end
+end)
 
 RegisterNUICallback('dlrms_hud:close', function()
-    displayUI(false)
+    TriggerEvent('dlrms_hud:ui', false)
+end)
+
+RegisterCommand('hud', function()
+    ui = not ui
+    if ui then 
+        TriggerEvent('dlrms_hud:ui', true)
+    else
+        TriggerEvent('dlrms_hud:ui', false)
+    end
 end)
 
 Citizen.CreateThread(function()
