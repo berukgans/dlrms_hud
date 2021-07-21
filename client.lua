@@ -33,7 +33,6 @@ RegisterCommand('hud', function()
     ui = not ui
     if ui then 
         TriggerEvent('dlrms_hud:ui', true)
-        exports['dlrms_notify']:SendAlert('info','Ayar menüsü açıldı!')
     else
         TriggerEvent('dlrms_hud:ui', false)
     end
@@ -41,7 +40,7 @@ end)
 
 Citizen.CreateThread(function()
     while true do
-        local sleep = 100
+        local sleep = 500
         local pauseMenuOn = IsPauseMenuActive()
         
         if not pauseMenuOn then 
@@ -87,7 +86,6 @@ Citizen.CreateThread(function()
                 vehicle = vehicle
             })
         else
-            sleep = 500
             SendNUIMessage({
                 pauseMenuOn = true
             })
