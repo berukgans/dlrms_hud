@@ -121,16 +121,7 @@
   left: 0;
   top: 0;
 }
-.speedtype-label {
-  width: 50%;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  text-transform: uppercase;
-}
-.speedtype-label input[type="radio"] {
-  margin-right: 3px;
-}
+
 .check-label {
   width: 50px;
   height: 25px;
@@ -209,11 +200,6 @@ input[type="checkbox"]:checked + .check-button .uncheck-icon {
   left: 1.55%;
   bottom: 0.6%;
   transition: bottom 0.5s;
-  margin: 0;
-  padding: 0;
-}
-.hud-wrapper:not(:last-child) {
-  margin-right: 3px;
 }
 
 .hud-bar {

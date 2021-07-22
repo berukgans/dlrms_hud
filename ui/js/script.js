@@ -26,7 +26,7 @@ $(() => {
             }
           });
 
-          $("#hpchk").on("change", function () {
+          $("#healthchk").on("change", function () {
             this.checked ? $("#health").show("fast") : $("#health").hide("fast");
           });
           $("#armorchk").on("change", function () {
