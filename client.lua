@@ -39,6 +39,21 @@ RegisterCommand('hud', function()
 end)
 
 Citizen.CreateThread(function()
+    local minimap = RequestScaleformMovie('minimap')
+    while not HasScaleformMovieLoaded(minimap) do
+      Wait(0)
+    end
+
+    SetMinimapComponentPosition('minimap', 'L', 'B', -0.0045, -0.012, 0.150, 0.188888)
+    SetMinimapComponentPosition('minimap_mask', 'L', 'B', 0.020, 0.022, 0.111, 0.159)
+    SetMinimapComponentPosition('minimap_blur', 'L', 'B', -0.03, 0.012, 0.266, 0.237)
+
+    SetRadarBigmapEnabled(true, false)
+    Wait(500)
+    SetRadarBigmapEnabled(false, false)
+end)
+
+Citizen.CreateThread(function()
     while true do
         local sleep = 500
         local pauseMenuOn = IsPauseMenuActive()
