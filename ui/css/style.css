@@ -196,11 +196,10 @@ input[type='checkbox']:checked + .check-button .uncheck-icon {
   position: absolute;
   width: 14.2%;
   left: 1.55%;
-  bottom: 0.6%;
-  transition: bottom 0.3s;
+  bottom: 0.7%;
 }
 .hud-bar {
-  height: 27px;
+  height: 25px;
   background: rgba(0, 0, 0, 0.35);
   position: relative;
   margin-right: 3px;
@@ -216,8 +215,8 @@ input[type='checkbox']:checked + .check-button .uncheck-icon {
 }
 #hud-top {
   width: 100%;
-  height: 5px;
-  margin-bottom: 4px;
+  height: 6px;
+  margin-bottom: 3.6px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -246,13 +245,11 @@ input[type='checkbox']:checked + .check-button .uncheck-icon {
   min-width: 0;
   transition: width 0.3s;
 }
-
 .hud-icon {
   width: 15px;
   height: 15px;
   z-index: 2;
 }
-
 .hud-value {
   width: 100%;
   max-width: 100%;
@@ -265,13 +262,11 @@ input[type='checkbox']:checked + .check-button .uncheck-icon {
   bottom: 0;
   z-index: 0;
 }
-
 #health,
 #armor {
   padding: 0 5px;
   flex: 1;
 }
-
 #hunger,
 #thirst,
 #stamina,
@@ -279,7 +274,6 @@ input[type='checkbox']:checked + .check-button .uncheck-icon {
   width: 25px;
   justify-content: center;
 }
-
 .hud-alert {
   width: 100%;
   height: 100%;
@@ -292,7 +286,6 @@ input[type='checkbox']:checked + .check-button .uncheck-icon {
   top: 0;
   z-index: 1;
 }
-
 .health {
   background: var(--color-health);
   box-shadow: var(--boxshadow-health);
@@ -301,28 +294,23 @@ input[type='checkbox']:checked + .check-button .uncheck-icon {
   background: var(--color-armor);
   box-shadow: var(--boxshadow-armor);
 }
-
 .hunger,
 .hunger-top {
   background: var(--color-hunger);
   box-shadow: var(--boxshadow-hunger);
 }
-
 .thirst,
 .thirst-top {
   background: var(--color-thirst);
   box-shadow: var(--boxshadow-thirst);
 }
-
 .stamina {
   background: var(--color-stamina);
   box-shadow: var(--boxshadow-stamina);
 }
-
 .blink-anim {
   animation: blink normal 1s infinite ease-in-out;
 }
-
 @keyframes blink {
   0% {
     opacity: 1;
