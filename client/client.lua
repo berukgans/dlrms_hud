@@ -3,7 +3,7 @@ local ui = false
 
 Citizen.CreateThread(function()
     while ESX == nil do
-        Citizen.Wait(1)
+        Citizen.Wait(0)
         TriggerEvent('esx:getSharedObject', function(obj)
             ESX = obj
         end)
@@ -41,7 +41,7 @@ end)
 Citizen.CreateThread(function()
     local minimap = RequestScaleformMovie('minimap')
     while not HasScaleformMovieLoaded(minimap) do
-      Wait(0)
+      Citizen.Wait(0)
     end
 
     SetMinimapComponentPosition('minimap', 'L', 'B', -0.0045, -0.008, 0.150, 0.188888)
@@ -49,14 +49,14 @@ Citizen.CreateThread(function()
     SetMinimapComponentPosition('minimap_blur', 'L', 'B', -0.03, 0.017, 0.266, 0.237)
 
     SetRadarBigmapEnabled(true, false)
-    Wait(500)
+    Citizen.Wait(500)
     SetRadarBigmapEnabled(false, false)
 end)
 
 local bigMap = false
 Citizen.CreateThread(function()
     while true do 
-        Citizen.Wait(1)
+        local sleep = 1
         local ped = PlayerPedId()
         local veh = GetVehiclePedIsIn(ped, false)
         if IsPedInVehicle(ped, veh, false) then 
@@ -69,10 +69,13 @@ Citizen.CreateThread(function()
                 end
                 SendNUIMessage({
                     action = 'isBigMapActive',
-                    bigMap = bigMap
+                    bigMap = bigMap,
                 })
             end
+        else
+            sleep = 500
         end
+        Citizen.Wait(sleep)
     end
 end)
 
