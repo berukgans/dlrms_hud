@@ -206,6 +206,7 @@ input[type='checkbox']:checked + .check-button .uncheck-icon {
   z-index: 1;
   display: flex;
   align-items: center;
+  border-radius: 2px;
 }
 #hts {
   width: fit-content;
