@@ -56,7 +56,7 @@ end)
 local bigMap = false
 Citizen.CreateThread(function()
     while true do 
-        local sleep = 1
+        Citizen.Wait(1)
         local ped = PlayerPedId()
         local veh = GetVehiclePedIsIn(ped, false)
         if IsPedInVehicle(ped, veh, false) then 
@@ -69,13 +69,10 @@ Citizen.CreateThread(function()
                 end
                 SendNUIMessage({
                     action = 'isBigMapActive',
-                    bigMap = bigMap,
+                    bigMap = bigMap
                 })
             end
-        else
-            sleep = 500
         end
-        Citizen.Wait(sleep)
     end
 end)
 
