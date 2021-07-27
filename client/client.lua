@@ -57,17 +57,21 @@ local bigMap = false
 Citizen.CreateThread(function()
     while true do 
         Citizen.Wait(1)
-        if IsControlJustPressed(0, 20)then 
-            bigMap = not bigMap
-            if bigMap then 
-                SetRadarBigmapEnabled(true, false)
-            else
-                SetRadarBigmapEnabled(false, false)
+        local ped = PlayerPedId()
+        local veh = GetVehiclePedIsIn(ped, false)
+        if IsPedInVehicle(ped, veh, false) then 
+            if IsControlJustPressed(0, 20)then 
+                bigMap = not bigMap
+                if bigMap then 
+                    SetRadarBigmapEnabled(true, false)
+                else
+                    SetRadarBigmapEnabled(false, false)
+                end
+                SendNUIMessage({
+                    action = 'isBigMapActive',
+                    bigMap = bigMap
+                })
             end
-            SendNUIMessage({
-                action = 'isBigMapActive',
-                bigMap = bigMap
-            })
         end
     end
 end)
