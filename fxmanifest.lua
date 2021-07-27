@@ -1,6 +1,6 @@
 fx_version 'adamant'
 game 'gta5'
-version '1.2.2'
+version '1.2.3'
 author 'https://github.com/Delarmuss'
 description 'Status hud by delarmuss'
 client_scripts {

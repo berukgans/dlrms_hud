@@ -55,29 +55,6 @@ end)
 
 local bigMap = false
 Citizen.CreateThread(function()
-    while true do 
-        Citizen.Wait(1)
-        local ped = PlayerPedId()
-        local veh = GetVehiclePedIsIn(ped, false)
-        if IsPedInVehicle(ped, veh, false) then 
-            if IsControlJustPressed(0, 20)then 
-                bigMap = not bigMap
-                if bigMap then 
-                    SetRadarBigmapEnabled(true, false)
-                else
-                    SetRadarBigmapEnabled(false, false)
-                end
-            end
-        end
-        SendNUIMessage({
-            action = 'isBigMapActive',
-            bigMap = bigMap,
-            veh = veh
-        })
-    end
-end)
-
-Citizen.CreateThread(function()
     while true do
         local sleep = 500
         local pauseMenuOn = IsPauseMenuActive()
@@ -96,6 +73,14 @@ Citizen.CreateThread(function()
 
             if IsPedInVehicle(ped, vehicle, false) then
                 DisplayRadar(true)
+                if IsControlPressed(0, 20)then 
+                    bigMap = not bigMap
+                    if bigMap then 
+                        SetRadarBigmapEnabled(true, false)
+                    else
+                        SetRadarBigmapEnabled(false, false)
+                    end
+                end
             else
                 DisplayRadar(false)
                 if breath then
@@ -104,7 +89,7 @@ Citizen.CreateThread(function()
                     stamina = GetPlayerSprintTimeRemaining(PlayerId()) * 10
                 end
             end
-                
+           
             SendNUIMessage({
                 action = 'hud',
                 pauseMenuOn = false,
@@ -122,6 +107,7 @@ Citizen.CreateThread(function()
                 swim = swim,
                 breath = breath,
 
+                bigMap = bigMap,
                 vehicle = vehicle
             })
         else
