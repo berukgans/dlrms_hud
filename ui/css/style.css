@@ -196,7 +196,7 @@ input[type='checkbox']:checked + .check-button .uncheck-icon {
   position: absolute;
   width: 14.2%;
   left: 1.55%;
-  bottom: 0.7%;
+  bottom: 0.6%;
 }
 .hud-bar {
   height: 25px;
@@ -215,8 +215,8 @@ input[type='checkbox']:checked + .check-button .uncheck-icon {
 }
 #hud-top {
   width: 100%;
-  height: 6px;
-  margin-bottom: 3.6px;
+  height: 5px;
+  margin-bottom: 3px;
   display: flex;
   align-items: center;
   justify-content: space-between;
