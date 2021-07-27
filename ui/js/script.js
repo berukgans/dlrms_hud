@@ -111,6 +111,12 @@ $(() => {
             $('.stamina-icon').attr('src', 'img/breath.svg');
           }
         }
+      } else if (data.action == 'isBigMapActive') {
+        if (data.bigMap) {
+          $('.hud-wrapper').css('width', '23%');
+        } else {
+          $('.hud-wrapper').css('width', '14.2%');
+        }
       }
     } else {
       $('.hud-container').hide();

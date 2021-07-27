@@ -194,7 +194,7 @@ input[type='checkbox']:checked + .check-button .uncheck-icon {
   flex-wrap: wrap;
   align-items: center;
   position: absolute;
-  width: 14.2%;
+  width: 14.2%; /*23%*/
   left: 1.55%;
   bottom: 0.6%;
 }

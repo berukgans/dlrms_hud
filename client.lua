@@ -53,6 +53,25 @@ Citizen.CreateThread(function()
     SetRadarBigmapEnabled(false, false)
 end)
 
+local bigMap = false
+Citizen.CreateThread(function()
+    while true do 
+        Citizen.Wait(1)
+        if IsControlJustPressed(0, 20)then 
+            bigMap = not bigMap
+            if bigMap then 
+                SetRadarBigmapEnabled(true, false)
+            else
+                SetRadarBigmapEnabled(false, false)
+            end
+            SendNUIMessage({
+                action = 'isBigMapActive',
+                bigMap = bigMap
+            })
+        end
+    end
+end)
+
 Citizen.CreateThread(function()
     while true do
         local sleep = 500
