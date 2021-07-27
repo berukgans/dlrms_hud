@@ -114,7 +114,7 @@ $(() => {
       } else if (data.action == 'isBigMapActive') {
         if (data.veh) {
           if (data.bigMap) {
-            $('.hud-wrapper').css({ width: '22%', opacity: 0.4 });
+            $('.hud-wrapper').css({ width: '22.5%', opacity: 0.4 });
           } else {
             $('.hud-wrapper').css({ width: '14.2%', opacity: 1.0 });
           }
