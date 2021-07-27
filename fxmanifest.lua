@@ -7,8 +7,8 @@ client_scripts {
 	'client.lua',
 	'config.lua'
 }
+server_script 'version_check.lua'
 ui_page'ui/ui.html'
-
 files{
 	"ui/css/*.css",
 	"ui/font/*.ttf",
