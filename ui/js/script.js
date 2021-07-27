@@ -112,8 +112,12 @@ $(() => {
           }
         }
       } else if (data.action == 'isBigMapActive') {
-        if (data.bigMap) {
-          $('.hud-wrapper').css({ width: '23%', opacity: 0.4 });
+        if (data.veh) {
+          if (data.bigMap) {
+            $('.hud-wrapper').css({ width: '22%', opacity: 0.4 });
+          } else {
+            $('.hud-wrapper').css({ width: '14.2%', opacity: 1.0 });
+          }
         } else {
           $('.hud-wrapper').css({ width: '14.2%', opacity: 1.0 });
         }

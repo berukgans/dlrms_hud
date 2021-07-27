@@ -67,12 +67,13 @@ Citizen.CreateThread(function()
                 else
                     SetRadarBigmapEnabled(false, false)
                 end
-                SendNUIMessage({
-                    action = 'isBigMapActive',
-                    bigMap = bigMap
-                })
             end
         end
+        SendNUIMessage({
+            action = 'isBigMapActive',
+            bigMap = bigMap,
+            veh = veh
+        })
     end
 end)
 
