@@ -4,7 +4,7 @@ version '1.2.3'
 author 'https://github.com/Delarmuss'
 description 'Status hud by delarmuss'
 client_scripts {
-	'client/client.lua',
+	'client.lua',
 	'config.lua'
 }
 ui_page'ui/ui.html'
