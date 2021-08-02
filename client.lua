@@ -54,20 +54,19 @@ end)
 Citizen.CreateThread(function()
     while true do 
         Citizen.Wait(1000)
-        local serverID = PlayerId()
         local pauseMenuOn = IsPauseMenuActive()
         local clock = GetClockHours()..':'..GetClockMinutes()
         if not pauseMenuOn then
             ESX.TriggerServerCallback('dlrms_hud:getAccounts', function(label, grade, cash, bank, dirty, society)
                 SendNUIMessage({
                   action = 'details',
-                    id = GetPlayerServerId(serverID),
+                    id = GetPlayerServerId(PlayerId()),
                     label = label,
                     grade = grade,
-                    cash = format_int(cash),
-                    bank = format_int(bank),
-                    dirty = format_int(dirty),
-                    society = format_int(society),
+                    cash = cash,
+                    bank = bank,
+                    dirty = dirty,
+                    society = society,
                     clock = clock
                 })
             end)
@@ -140,9 +139,3 @@ Citizen.CreateThread(function()
         Citizen.Wait(sleep)
     end
 end)
-
-function format_int(number)
-    local i, j, minus, int, fraction = tostring(number):find('([-]?)(%d+)([.]?%d*)')
-    int = int:reverse():gsub("(%d%d%d)", "%1,")
-    return minus .. int:reverse():gsub("^,", "") .. fraction
-end
