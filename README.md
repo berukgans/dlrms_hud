@@ -1,5 +1,5 @@
-# Fivem Status Hud
-Fivem için geliştirdiğim status hud.
+# Fivem Hud
+Fivem için geliştirdiğim hud.
 
 ### Özellikleri
 * Alert Sistemi (Can ve Zırh:50 ve altında ise, Açlık ve Susuzluk:25 ve altında ise kırmızı renkte yanıp söner.)
