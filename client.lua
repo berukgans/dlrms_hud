@@ -55,18 +55,21 @@ Citizen.CreateThread(function()
     while true do 
         Citizen.Wait(1000)
         local serverID = PlayerId()
-        ESX.TriggerServerCallback('dlrms_hud:getAccounts', function(label, grade, cash, bank, dirty, society)
-            SendNUIMessage({
-              action = 'details',
-                id = GetPlayerServerId(serverID),
-                label = label,
-                grade = grade,
-                cash = format_int(cash),
-                bank = format_int(bank),
-                dirty = format_int(dirty),
-                society = society,
-            })
-        end)
+        local pauseMenuOn = IsPauseMenuActive()
+        if not pauseMenuOn then
+            ESX.TriggerServerCallback('dlrms_hud:getAccounts', function(label, grade, cash, bank, dirty, society)
+                SendNUIMessage({
+                  action = 'details',
+                    id = GetPlayerServerId(serverID),
+                    label = label,
+                    grade = grade,
+                    cash = format_int(cash),
+                    bank = format_int(bank),
+                    dirty = format_int(dirty),
+                    society = society,
+                })
+            end)
+        end
     end
 end)
 
