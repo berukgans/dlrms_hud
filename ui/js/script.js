@@ -141,14 +141,23 @@ $(() => {
       } else if (data.action === 'details') {
         $('.hud-job span').text(data.label + ' - ' + data.grade);
         $('.hud-playerID span').text(data.id);
-        $('.hud-bank span').text('$' + data.bank);
-        $('.hud-cash span').text('$' + data.cash);
-        $('.hud-society span').text('$' + data.society);
-        $('.hud-black span').text('$' + data.dirty);
+        $('.hud-bank span').text('$' + data.bank.format());
+        $('.hud-cash span').text('$' + data.cash.format());
+        $('.hud-society span').text('$' + data.society.format());
+        $('.hud-black span').text('$' + data.dirty.format());
         $('.hud-clock span').text(data.clock);
       }
     } else {
       $('.hud-container').hide();
     }
   });
+  Number.prototype.format = function (n, x) {
+    var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
+    return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
+  };
+  // example
+  // 1234..format();           // "1,234"
+  // 12345..format(2);         // "12,345.00"
+  // 123456.7.format(3, 2);    // "12,34,56.700"
+  // 123456.789.format(2, 4);  // "12,3456.79"
 });

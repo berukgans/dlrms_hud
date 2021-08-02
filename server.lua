@@ -18,11 +18,5 @@ ESX.RegisterServerCallback('dlrms_hud:getAccounts', function(source, cb)
       end)
   end
 
-  cb(job.label, job.grade_label, format_int(xPlayer.getMoney()), format_int(xPlayer.getAccount("bank").money), format_int(xPlayer.getAccount("black_money").money), format_int(society))
+  cb(job.label, job.grade_label, xPlayer.getMoney(), xPlayer.getAccount("bank").money, xPlayer.getAccount("black_money").money, society)
 end)
-
-function format_int(number)
-  local i, j, minus, int, fraction = tostring(number):find('([-]?)(%d+)([.]?%d*)')
-  int = int:reverse():gsub("(%d%d%d)", "%1,")
-  return minus .. int:reverse():gsub("^,", "") .. fraction
-end
