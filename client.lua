@@ -8,10 +8,10 @@ Citizen.CreateThread(function()
     end
 end)
 
--- RegisterNetEvent("esx_status:onTick") 
--- AddEventHandler("esx_status:onTick", function(status)
---     hunger, thirst = status[1].percent, status[2].percent
--- end)
+RegisterNetEvent("esx_status:onTick") 
+AddEventHandler("esx_status:onTick", function(status)
+    hunger, thirst = status[1].percent, status[2].percent
+end)
 
 RegisterNetEvent('dlrms_hud:ui')
 AddEventHandler('dlrms_hud:ui', function(bool)
