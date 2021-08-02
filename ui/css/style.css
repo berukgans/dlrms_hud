@@ -204,7 +204,8 @@ input[type='checkbox']:checked + .check-button .uncheck-icon {
 .hud-playerID,
 .hud-cash,
 .hud-society,
-.hud-black {
+.hud-black,
+.hud-clock {
   height: 100%;
   width: fit-content;
   background: rgba(44, 44, 44, 1);
@@ -215,7 +216,7 @@ input[type='checkbox']:checked + .check-button .uncheck-icon {
   padding: 5px 7px;
   margin-right: 5px;
 }
-.hud-black {
+.hud-clock {
   margin-right: 0;
 }
 .hud-details svg {

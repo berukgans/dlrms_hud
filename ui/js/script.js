@@ -65,6 +65,9 @@ $(() => {
           $('#blackchk').on('change', function () {
             this.checked ? $('.hud-black').fadeIn('fast') : $('.hud-black').fadeOut('fast');
           });
+          $('#clockchk').on('change', function () {
+            this.checked ? $('.hud-clock').fadeIn('fast') : $('.hud-clock').fadeOut('fast');
+          });
         } else {
           $('.hud-menu').fadeOut('fast');
         }
@@ -142,6 +145,7 @@ $(() => {
         $('.hud-cash span').text('$' + data.cash);
         $('.hud-society span').text('$' + data.society);
         $('.hud-black span').text('$' + data.dirty);
+        $('.hud-clock span').text(data.clock);
       }
     } else {
       $('.hud-container').hide();

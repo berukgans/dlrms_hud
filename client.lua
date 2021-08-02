@@ -56,6 +56,7 @@ Citizen.CreateThread(function()
         Citizen.Wait(1000)
         local serverID = PlayerId()
         local pauseMenuOn = IsPauseMenuActive()
+        local clock = GetClockHours()..':'..GetClockMinutes()
         if not pauseMenuOn then
             ESX.TriggerServerCallback('dlrms_hud:getAccounts', function(label, grade, cash, bank, dirty, society)
                 SendNUIMessage({
@@ -66,7 +67,8 @@ Citizen.CreateThread(function()
                     cash = format_int(cash),
                     bank = format_int(bank),
                     dirty = format_int(dirty),
-                    society = society,
+                    society = format_int(society),
+                    clock = clock
                 })
             end)
         end
