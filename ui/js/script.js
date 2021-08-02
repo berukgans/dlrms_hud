@@ -27,43 +27,43 @@ $(() => {
           });
 
           $('#healthchk').on('change', function () {
-            this.checked ? $('#health').show('fast') : $('#health').hide('fast');
+            this.checked ? $('#health').fadeIn('fast') : $('#health').fadeOut('fast');
           });
           $('#armorchk').on('change', function () {
-            this.checked ? $('#armor').show('fast') : $('#armor').hide('fast');
+            this.checked ? $('#armor').fadeIn('fast') : $('#armor').fadeOut('fast');
           });
           $('#hungerchk').on('change', function () {
-            this.checked ? $('#hunger').show('fast') : $('#hunger').hide('fast');
+            this.checked ? $('#hunger').fadeIn('fast') : $('#hunger').fadeOut('fast');
           });
           $('#thirstchk').on('change', function () {
-            this.checked ? $('#thirst').show('fast') : $('#thirst').hide('fast');
+            this.checked ? $('#thirst').fadeIn('fast') : $('#thirst').fadeOut('fast');
           });
           $('#hungerinchk').on('change', function () {
-            this.checked ? $('#hunger-top').show('fast') : $('#hunger-top').hide('fast');
+            this.checked ? $('#hunger-top').fadeIn('fast') : $('#hunger-top').fadeOut('fast');
           });
           $('#thirstinchk').on('change', function () {
-            this.checked ? $('#thirst-top').show('fast') : $('#thirst-top').hide('fast');
+            this.checked ? $('#thirst-top').fadeIn('fast') : $('#thirst-top').fadeOut('fast');
           });
           $('#staminachk').on('change', function () {
-            this.checked ? $('#stamina').show('fast') : $('#stamina').hide('fast');
+            this.checked ? $('#stamina').fadeIn('fast') : $('#stamina').fadeOut('fast');
           });
           $('#jobchk').on('change', function () {
-            this.checked ? $('.hud-job').show('fast') : $('.hud-job').hide('fast');
+            this.checked ? $('.hud-job').fadeIn('fast') : $('.hud-job').fadeOut('fast');
           });
           $('#idchk').on('change', function () {
-            this.checked ? $('.hud-playerID').show('fast') : $('.hud-playerID').hide('fast');
+            this.checked ? $('.hud-playerID').fadeIn('fast') : $('.hud-playerID').fadeOut('fast');
           });
           $('#bankchk').on('change', function () {
-            this.checked ? $('.hud-bank').show('fast') : $('.hud-bank').hide('fast');
+            this.checked ? $('.hud-bank').fadeIn('fast') : $('.hud-bank').fadeOut('fast');
           });
           $('#walletchk').on('change', function () {
-            this.checked ? $('.hud-cash').show('fast') : $('.hud-cash').hide('fast');
+            this.checked ? $('.hud-cash').fadeIn('fast') : $('.hud-cash').fadeOut('fast');
           });
           $('#societychk').on('change', function () {
-            this.checked ? $('.hud-society').show('fast') : $('.hud-society').hide('fast');
+            this.checked ? $('.hud-society').fadeIn('fast') : $('.hud-society').fadeOut('fast');
           });
           $('#blackchk').on('change', function () {
-            this.checked ? $('.hud-black').show('fast') : $('.hud-black').hide('fast');
+            this.checked ? $('.hud-black').fadeIn('fast') : $('.hud-black').fadeOut('fast');
           });
         } else {
           $('.hud-menu').fadeOut('fast');
