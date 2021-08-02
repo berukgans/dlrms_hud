@@ -4,16 +4,14 @@ local ui = false
 Citizen.CreateThread(function()
     while ESX == nil do
         Citizen.Wait(0)
-        TriggerEvent('esx:getSharedObject', function(obj)
-            ESX = obj
-        end)
+        TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
     end
 end)
 
-RegisterNetEvent("esx_status:onTick") 
-AddEventHandler("esx_status:onTick", function(status)
-    hunger, thirst = status[1].percent, status[2].percent
-end)
+-- RegisterNetEvent("esx_status:onTick") 
+-- AddEventHandler("esx_status:onTick", function(status)
+--     hunger, thirst = status[1].percent, status[2].percent
+-- end)
 
 RegisterNetEvent('dlrms_hud:ui')
 AddEventHandler('dlrms_hud:ui', function(bool)
@@ -53,6 +51,25 @@ Citizen.CreateThread(function()
     SetRadarBigmapEnabled(false, false)
 end)
 
+Citizen.CreateThread(function()
+    while true do 
+        Citizen.Wait(1000)
+        local serverID = PlayerId()
+        ESX.TriggerServerCallback('dlrms_hud:getAccounts', function(label, grade, cash, bank, dirty, society)
+            SendNUIMessage({
+              action = 'details',
+                id = GetPlayerServerId(serverID),
+                label = label,
+                grade = grade,
+                cash = format_int(cash),
+                bank = format_int(bank),
+                dirty = format_int(dirty),
+                society = society,
+            })
+        end)
+    end
+end)
+
 local bigMap = false
 Citizen.CreateThread(function()
     while true do
@@ -89,7 +106,7 @@ Citizen.CreateThread(function()
                     stamina = GetPlayerSprintTimeRemaining(PlayerId()) * 10
                 end
             end
-           
+            
             SendNUIMessage({
                 action = 'hud',
                 pauseMenuOn = false,
@@ -118,3 +135,9 @@ Citizen.CreateThread(function()
         Citizen.Wait(sleep)
     end
 end)
+
+function format_int(number)
+    local i, j, minus, int, fraction = tostring(number):find('([-]?)(%d+)([.]?%d*)')
+    int = int:reverse():gsub("(%d%d%d)", "%1,")
+    return minus .. int:reverse():gsub("^,", "") .. fraction
+end

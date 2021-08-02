@@ -47,6 +47,24 @@ $(() => {
           $('#staminachk').on('change', function () {
             this.checked ? $('#stamina').show('fast') : $('#stamina').hide('fast');
           });
+          $('#jobchk').on('change', function () {
+            this.checked ? $('.hud-job').show('fast') : $('.hud-job').hide('fast');
+          });
+          $('#idchk').on('change', function () {
+            this.checked ? $('.hud-playerID').show('fast') : $('.hud-playerID').hide('fast');
+          });
+          $('#bankchk').on('change', function () {
+            this.checked ? $('.hud-bank').show('fast') : $('.hud-bank').hide('fast');
+          });
+          $('#walletchk').on('change', function () {
+            this.checked ? $('.hud-cash').show('fast') : $('.hud-cash').hide('fast');
+          });
+          $('#societychk').on('change', function () {
+            this.checked ? $('.hud-society').show('fast') : $('.hud-society').hide('fast');
+          });
+          $('#blackchk').on('change', function () {
+            this.checked ? $('.hud-black').show('fast') : $('.hud-black').hide('fast');
+          });
         } else {
           $('.hud-menu').fadeOut('fast');
         }
@@ -117,6 +135,13 @@ $(() => {
             $('.stamina-icon').attr('src', 'img/breath.svg');
           }
         }
+      } else if (data.action === 'details') {
+        $('.hud-job span').text(data.label + ' - ' + data.grade);
+        $('.hud-playerID span').text(data.id);
+        $('.hud-bank span').text('$' + data.bank);
+        $('.hud-cash span').text('$' + data.cash);
+        $('.hud-society span').text('$' + data.society);
+        $('.hud-black span').text('$' + data.dirty);
       }
     } else {
       $('.hud-container').hide();

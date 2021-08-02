@@ -188,6 +188,60 @@ input[type='checkbox']:checked + .check-button .uncheck-icon {
   width: 25px;
   height: 25px;
 }
+.hud-details {
+  /* width: 400px; */
+  height: 25px;
+  /* background: rgba(0, 0, 0, 0.35); */
+  position: absolute;
+  right: 160px;
+  top: 10px;
+  /* overflow: hidden; */
+  display: flex;
+  align-items: center;
+}
+.hud-job,
+.hud-bank,
+.hud-playerID,
+.hud-cash,
+.hud-society,
+.hud-black {
+  height: 100%;
+  width: fit-content;
+  background: rgba(44, 44, 44, 1);
+  box-shadow: 0 0 3px rgba(44, 44, 44, 1);
+  display: flex;
+  border-radius: 2px;
+  align-items: center;
+  padding: 5px 7px;
+  margin-right: 5px;
+}
+.hud-black {
+  margin-right: 0;
+}
+.hud-details svg {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  fill: #fff;
+}
+.hud-bank svg {
+  fill: rgba(184, 20, 20, 0.8);
+}
+.hud-cash svg {
+  fill: rgba(65, 155, 53, 1);
+}
+.hud-society svg {
+  fill: rgba(101, 137, 182, 1);
+}
+.hud-black svg {
+  fill: rgba(255, 255, 255, 0.5);
+}
+.hud-details span {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+}
 .hud-wrapper {
   display: flex;
   flex-direction: column;
