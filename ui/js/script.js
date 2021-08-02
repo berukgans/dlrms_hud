@@ -1,4 +1,13 @@
 $(() => {
+  Number.prototype.format = function (n, x) {
+    var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
+    return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
+  };
+  // example
+  // 1234..format();           // "1,234"
+  // 12345..format(2);         // "12,345.00"
+  // 123456.7.format(3, 2);    // "12,34,56.700"
+  // 123456.789.format(2, 4);  // "12,3456.79"
   window.addEventListener('message', (e) => {
     const data = e.data;
     if (!data.pauseMenuOn) {
@@ -151,13 +160,4 @@ $(() => {
       $('.hud-container').hide();
     }
   });
-  Number.prototype.format = function (n, x) {
-    var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
-    return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
-  };
-  // example
-  // 1234..format();           // "1,234"
-  // 12345..format(2);         // "12,345.00"
-  // 123456.7.format(3, 2);    // "12,34,56.700"
-  // 123456.789.format(2, 4);  // "12,3456.79"
 });

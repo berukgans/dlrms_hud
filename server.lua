@@ -6,16 +6,18 @@ ESX.RegisterServerCallback('dlrms_hud:getAccounts', function(source, cb)
   local xPlayer = ESX.GetPlayerFromId(source)
   local job = xPlayer.getJob()
   local mySociety = nil
-  local society = nil
-    
-  TriggerEvent('esx_society:getSociety', xPlayer.job.name, function(_society)
-      mySociety = _society
-  end)
+  local society = 0
 
-  if mySociety ~= nil then
-      TriggerEvent('esx_addonaccount:getSharedAccount', mySociety.account, function(account)
-            society = account.money
-      end)
+  if xPlayer.job.grade == 'boss' then
+    TriggerEvent('esx_society:getSociety', xPlayer.job.name, function(_society)
+        mySociety = _society
+    end)
+
+    if mySociety ~= nil then
+        TriggerEvent('esx_addonaccount:getSharedAccount', mySociety.account, function(account)
+              society = account.money
+        end)
+    end
   end
 
   cb(job.label, job.grade_label, xPlayer.getMoney(), xPlayer.getAccount("bank").money, xPlayer.getAccount("black_money").money, society)
